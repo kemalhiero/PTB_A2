@@ -1,10 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">E-KP</string>
-    <string name="title_activity_bottom_nav">BottomNav</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="todo">TODO</string>
     <string name="namaKaprodi">Husnil Kamil</string>
     <string name="teksPilihAktivitas">Pilih aktivitas kamu</string>
     <string name="hello">Hello,</string>
