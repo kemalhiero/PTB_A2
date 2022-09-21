@@ -12,14 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="id.a2.e_kp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_logbook"
+        android:name="id.a2.e_kp.LogbookFragment"
+        android:label="@string/title_logbook"
+        tools:layout="@layout/fragment_logbook" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="id.a2.e_kp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_instansi"
+        android:name="id.a2.e_kp.InstansiFragment"
+        android:label="@string/title_instansi"
+        tools:layout="@layout/fragment_instansi" />
+
+    <fragment
+        android:id="@+id/navigation_laporan"
+        android:name="id.a2.e_kp.LaporanFragment"
+        android:label="@string/title_laporan"
+        tools:layout="@layout/fragment_laporan" />
 </navigation>

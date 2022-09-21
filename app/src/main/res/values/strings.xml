@@ -2,8 +2,9 @@
     <string name="app_name">E-KP</string>
     <string name="title_activity_bottom_nav">BottomNav</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_logbook">Logbook</string>
+    <string name="title_instansi">Instansi</string>
+    <string name="title_laporan">Laporan</string>
     <string name="todo">TODO</string>
     <string name="namaKaprodi">Husnil Kamil</string>
     <string name="teksPilihAktivitas">Pilih aktivitas kamu</string>
@@ -11,4 +12,6 @@
     <string name="teksUsername">Username</string>
     <string name="teksPassword">Password</string>
     <string name="teksLogin">Log In</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
