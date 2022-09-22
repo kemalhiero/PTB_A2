@@ -16,7 +16,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [LaporanFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LaporanFragment : Fragment() {
+class LaporanFragment : Fragment(R.layout.fragment_laporan) {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null

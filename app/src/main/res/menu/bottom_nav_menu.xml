@@ -12,7 +12,7 @@
         android:title="@string/title_logbook"/>
 
     <item
-        android:id="@+id/navigation_intansi"
+        android:id="@+id/navigation_instansi"
         android:icon="@drawable/logo_instansi_buram"
         android:title="@string/title_instansi"/>
 

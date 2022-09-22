@@ -12,7 +12,7 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         lateinit var button1 : Button
-        button1  = findViewById(R.id.button3)
+        button1  = findViewById(R.id.tombolLogin)
         button1.setOnClickListener{
             intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
