@@ -11,29 +11,28 @@
         android:id="@+id/textHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:text="@string/hello"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/textNamaKaprodi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/poppins_bold"
         android:text="@string/namaKaprodi"
         android:textColor="#232222"
         android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textHello"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textHello"
-        app:layout_constraintTop_toBottomOf="@+id/textHello"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHello" />
 
     <TextView
         android:id="@+id/textPilihAktivitasmu"
@@ -41,17 +40,17 @@
         android:layout_height="wrap_content"
         android:text="@string/teksPilihAktivitas"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textNamaKaprodi"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textNamaKaprodi"
+        app:layout_constraintBottom_toTopOf="@+id/imageUsulanKP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textNamaKaprodi"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.873" />
 
     <ImageView
         android:id="@+id/imageUsulanKP"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_width="347dp"
+        android:layout_height="110dp"
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,14 +62,14 @@
 
     <ImageView
         android:id="@+id/imageMahasiswaKP"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="351dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="@+id/imageUsulanKP"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageUsulanKP"
         app:layout_constraintTop_toBottomOf="@+id/imageUsulanKP"
-        app:srcCompat="@drawable/mahasiswa_kp"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/mahasiswa_kp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
