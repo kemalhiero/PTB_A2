@@ -29,9 +29,9 @@
         android:text="@string/namaKaprodi"
         android:textColor="#232222"
         android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textHello"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textHello"
         app:layout_constraintTop_toBottomOf="@+id/textHello" />
 
     <TextView
@@ -62,7 +62,7 @@
 
     <ImageView
         android:id="@+id/imageMahasiswaKP"
-        android:layout_width="351dp"
+        android:layout_width="347dp"
         android:layout_height="110dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/todo"
