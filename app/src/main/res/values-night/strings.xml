@@ -2,8 +2,11 @@
 <resources>
     <string name="namaKaprodi">Husnil Kamil</string>
     <string name="teksPilihAktivitas">Pilih aktivitas kamu</string>
-    <string name="hello">Good Morning</string>
+    <string name="hello">Halo</string>
     <string name="teksUsername">Username</string>
     <string name="teksPassword">Password</string>
     <string name="teksLogin">Log In</string>
+    <string name="titleFragmentLogbook">List Mahasiswa KP</string>
+    <string name="nimLogbook">2011523019</string>
+    <string name="namaLogbook">fulan bin fulan</string>
 </resources>

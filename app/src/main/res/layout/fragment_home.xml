@@ -16,7 +16,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05" />
@@ -30,8 +30,8 @@
         android:textColor="#232222"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textHello"
         app:layout_constraintTop_toBottomOf="@+id/textHello" />
 
     <TextView
@@ -42,10 +42,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageUsulanKP"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textNamaKaprodi"
         app:layout_constraintTop_toBottomOf="@+id/textNamaKaprodi"
-        app:layout_constraintVertical_bias="0.873" />
+        app:layout_constraintVertical_bias="0.51" />
 
     <ImageView
         android:id="@+id/imageUsulanKP"
@@ -56,8 +56,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301"
+        app:layout_constraintTop_toBottomOf="@+id/textNamaKaprodi"
+        app:layout_constraintVertical_bias="0.16000003"
         app:srcCompat="@drawable/usulan_kp" />
 
     <ImageView

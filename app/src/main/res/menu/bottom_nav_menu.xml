@@ -7,16 +7,6 @@
         android:title="@string/title_home"/>
 
     <item
-        android:id="@+id/navigation_logbook"
-        android:icon="@drawable/logo_logbook_buram"
-        android:title="@string/title_logbook"/>
-
-    <item
-        android:id="@+id/navigation_instansi"
-        android:icon="@drawable/logo_instansi_buram"
-        android:title="@string/title_instansi"/>
-
-    <item
         android:id="@+id/navigation_laporan"
         android:icon="@drawable/logo_laporan_buram"
         android:title="@string/title_laporan"/>

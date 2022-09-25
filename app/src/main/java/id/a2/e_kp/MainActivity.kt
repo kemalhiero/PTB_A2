@@ -12,9 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val homeFragment = HomeFragment()
-        val instansiFragment = InstansiFragment()
         val laporanFragment = LaporanFragment()
-        val logbookFragment = LogbookFragment()
 
         setCurrentFragment(homeFragment)
 
@@ -22,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         naview.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.navigation_home -> setCurrentFragment(homeFragment)
-                R.id.navigation_logbook -> setCurrentFragment(logbookFragment)
-                R.id.navigation_instansi -> setCurrentFragment(instansiFragment)
                 R.id.navigation_laporan -> setCurrentFragment(laporanFragment)
             }
             true
