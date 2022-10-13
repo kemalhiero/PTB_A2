@@ -1,37 +1,35 @@
 package id.a2.e_kp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import id.a2.e_kp.ui.home.HomeFragment
+import androidx.cardview.widget.CardView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val homeFragment = HomeFragment()
-        val laporanFragment = LaporanFragment()
-
-        setCurrentFragment(homeFragment)
-
-        val naview:BottomNavigationView = findViewById(R.id.navView)
-        naview.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.navigation_home -> setCurrentFragment(homeFragment)
-                R.id.navigation_laporan -> setCurrentFragment(laporanFragment)
-            }
-            true
+        lateinit var cardViewUsulanKp: CardView
+        cardViewUsulanKp = findViewById(R.id.cardViewUsulanKp)
+        cardViewUsulanKp.setOnClickListener {
+            intent = Intent(applicationContext, UsulanKpActivity::class.java)
+            startActivity(intent)
         }
 
+        lateinit var cardViewMahasiswaKp: CardView
+        cardViewMahasiswaKp = findViewById(R.id.cardViewMahasiswaKp)
+        cardViewMahasiswaKp.setOnClickListener {
+            intent = Intent(applicationContext, MahasiswaKpActivity::class.java)
+            startActivity(intent)
+        }
 
+        lateinit var cardViewLaporanKp: CardView
+        cardViewLaporanKp = findViewById(R.id.cardViewLaporanKp)
+        cardViewLaporanKp.setOnClickListener {
+            intent = Intent(applicationContext, LaporanActivity::class.java)
+            startActivity(intent)
+        }
     }
 
-
-    private fun setCurrentFragment(fragment: Fragment)=
-        supportFragmentManager.beginTransaction().apply{
-            replace(R.id.flFragment, fragment)
-            commit()
-        }
 }

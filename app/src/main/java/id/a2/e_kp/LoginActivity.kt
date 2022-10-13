@@ -11,9 +11,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
 
-        lateinit var button1 : Button
-        button1  = findViewById(R.id.tombolLogin)
-        button1.setOnClickListener{
+        lateinit var buttonLogin : Button
+        buttonLogin  = findViewById(R.id.tombolLogin)
+        buttonLogin.setOnClickListener{
             intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
