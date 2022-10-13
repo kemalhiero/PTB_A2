@@ -1,5 +1,6 @@
 package id.a2.e_kp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -28,22 +29,24 @@ class UsulanKpActivity : AppCompatActivity() {
 
         val data =ArrayList<UsulanKp>()
         data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))
-        data.add(UsulanKp(1,null,"Delicia Syifa", "201152202"))
+        data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
         data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
         data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))
-        data.add(UsulanKp(1,null,"Delicia Syifa", "201152202"))
+        data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
         data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
         data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))
-        data.add(UsulanKp(1,null,"Delicia Syifa", "201152202"))
+        data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
         data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
         data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))
-        data.add(UsulanKp(1,null,"Delicia Syifa", "201152202"))
+        data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
         data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
 
         adapter = UsulanKpAdapter(data)
         adapter.setOnClickListener(object : UsulanKpAdapter.clickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@UsulanKpActivity, "Ini item no $position+1", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@UsulanKpActivity, "Ini item no ${position + 1}", Toast.LENGTH_SHORT).show()
+                val detailUsulan = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
+                startActivity(detailUsulan)
             }
         })
 
