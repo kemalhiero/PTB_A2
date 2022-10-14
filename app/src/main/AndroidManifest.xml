@@ -20,6 +20,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".DetailMahasiswaKpActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DetailLaporanKpActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MahasiswaKpActivity"
             android:exported="false">
             <meta-data

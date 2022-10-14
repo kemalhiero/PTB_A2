@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".detailLaporan">
+    tools:context=".DetailLaporanKpActivity">
 
     <TextView
-        android:id="@+id/textViewLaporan2"
+        android:id="@+id/textViewLaporanKp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
@@ -16,36 +16,32 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewDetailLaporan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewDetailLaporan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginVertical="12dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
         android:padding="100dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="6dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/textViewLaporanNama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -59,7 +55,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/textViewLaporanNim"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -68,10 +64,10 @@
                 android:text="NIM"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewLaporanNama" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/textViewLaporanDospem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -80,10 +76,10 @@
                 android:text="Dosen Pembimbing"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewLaporanNim" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/textViewLaporanTanggalSelesai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -92,10 +88,10 @@
                 android:text="Tanggal Selesai KP"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewLaporanDospem" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/textViewLaporanNilaiAkhir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -106,10 +102,10 @@
                 android:textColor="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewLaporanTanggalSelesai" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/titik_titik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
@@ -117,48 +113,48 @@
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.42"
-                app:layout_constraintStart_toEndOf="@+id/textView8"
-                app:layout_constraintTop_toTopOf="@+id/textView8" />
+                app:layout_constraintStart_toEndOf="@+id/textViewLaporanNama"
+                app:layout_constraintTop_toTopOf="@+id/textViewLaporanNama" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/titik_titik2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
                 android:text=":"
                 android:textColor="#000000"
-                app:layout_constraintStart_toStartOf="@+id/textView17"
-                app:layout_constraintTop_toTopOf="@+id/textView13" />
+                app:layout_constraintStart_toStartOf="@+id/titik_titik"
+                app:layout_constraintTop_toTopOf="@+id/textViewLaporanNim" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/titik_titik3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
                 android:text=":"
                 android:textColor="#000000"
-                app:layout_constraintStart_toStartOf="@+id/textView18"
-                app:layout_constraintTop_toTopOf="@+id/textView14" />
+                app:layout_constraintStart_toStartOf="@+id/titik_titik2"
+                app:layout_constraintTop_toTopOf="@+id/textViewLaporanDospem" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/titik_titik4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
                 android:text=":"
                 android:textColor="#000000"
-                app:layout_constraintStart_toStartOf="@+id/textView19"
-                app:layout_constraintTop_toTopOf="@+id/textView15" />
+                app:layout_constraintStart_toStartOf="@+id/titik_titik3"
+                app:layout_constraintTop_toTopOf="@+id/textViewLaporanTanggalSelesai" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/titik_titik5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
                 android:text=":"
                 android:textColor="#000000"
-                app:layout_constraintStart_toStartOf="@+id/textView20"
-                app:layout_constraintTop_toTopOf="@+id/textView16" />
+                app:layout_constraintStart_toStartOf="@+id/titik_titik4"
+                app:layout_constraintTop_toTopOf="@+id/textViewLaporanNilaiAkhir" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

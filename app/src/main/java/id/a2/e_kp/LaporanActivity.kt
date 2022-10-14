@@ -48,8 +48,8 @@ class LaporanActivity : AppCompatActivity() {
         adapter.setOnClickListener(object : laporanKpAdapter.clickListener{
             override fun onItemClick(position: Int) {
                 Toast.makeText(this@LaporanActivity, "Ini item no ${position + 1}", Toast.LENGTH_SHORT).show()
-                val detailLaporan = Intent (this@LaporanActivity, detailLaporan::class.java)
-                startActivity(detailLaporan)
+                val DetailLaporanKpActivity = Intent (this@LaporanActivity, DetailLaporanKpActivity::class.java)
+                startActivity(DetailLaporanKpActivity)
             }
         })
 
