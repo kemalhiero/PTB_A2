@@ -3,7 +3,6 @@ package id.a2.e_kp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.adapters.UsulanKpAdapter
@@ -44,7 +43,6 @@ class UsulanKpActivity : AppCompatActivity() {
         adapter = UsulanKpAdapter(data)
         adapter.setOnClickListener(object : UsulanKpAdapter.clickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@UsulanKpActivity, "Ini item no ${position + 1}", Toast.LENGTH_SHORT).show()
                 val detailUsulan = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
                 startActivity(detailUsulan)
             }

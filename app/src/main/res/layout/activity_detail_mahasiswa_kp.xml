@@ -17,159 +17,187 @@
         android:textSize="24sp"
 
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cardViewDetailMahasiswa"
+        app:layout_constraintBottom_toTopOf="@+id/scrollViewDetailMhsKp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewDetailMahasiswa"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+    <ScrollView
+        android:id="@+id/scrollViewDetailMhsKp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="72dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cardViewDetailMahasiswaKp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="99dp"
-                android:layout_height="98dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.086"
-                app:srcCompat="@drawable/man" />
-
-            <TextView
-                android:id="@+id/tvDetailMhsKpNama"
-                android:layout_width="0dp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewDetailMahasiswa"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="Hagi Siraj"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.088" />
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
 
-            <TextView
-                android:id="@+id/tvDetailMhsKpNim"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:fontFamily="@font/poppins"
-                android:text="2011521015"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvDetailMhsKpNama"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetailMhsKpNama" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardViewDetailMahasiswaKp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tvDetailMhsKpPerusahaan"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:fontFamily="@font/poppins"
-                android:text="Google Indonesiah"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvDetailMhsKpNama"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetailMhsKpNim" />
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="99dp"
+                        android:layout_height="98dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.086"
+                        app:srcCompat="@drawable/man" />
+
+                    <TextView
+                        android:id="@+id/tvDetailMhsKpNama"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginEnd="32dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Hagi Siraj"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/imageView6"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.088" />
+
+                    <TextView
+                        android:id="@+id/tvDetailMhsKpNim"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="32dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="2011521015"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvDetailMhsKpNama"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailMhsKpNama" />
+
+                    <TextView
+                        android:id="@+id/tvDetailMhsKpPerusahaan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="32dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Google Indonesia"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvDetailMhsKpNama"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailMhsKpNim" />
+
+                    <Button
+                        android:id="@+id/buttonPembimbingKp"
+                        android:layout_width="280dp"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="42dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Pembimbing"
+                        app:cornerRadius="25dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.506"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetailMhsKpPerusahaan"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <Button
+                        android:id="@+id/buttonLogbookKp"
+                        android:layout_width="280dp"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Logbook"
+                        app:cornerRadius="25dp"
+                        app:layout_constraintEnd_toEndOf="@+id/buttonPembimbingKp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/buttonPembimbingKp"
+                        app:layout_constraintTop_toBottomOf="@+id/buttonPembimbingKp" />
+
+                    <Button
+                        android:id="@+id/buttonSeminarKp"
+                        android:layout_width="280dp"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Seminar"
+                        app:cornerRadius="25dp"
+                        app:layout_constraintEnd_toEndOf="@+id/buttonLogbookKp"
+                        app:layout_constraintStart_toStartOf="@+id/buttonLogbookKp"
+                        app:layout_constraintTop_toBottomOf="@+id/buttonLogbookKp" />
+
+                    <Button
+                        android:id="@+id/buttonNilaiKp"
+                        android:layout_width="280dp"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Persetujuan Nilai"
+                        app:cornerRadius="25dp"
+                        app:layout_constraintEnd_toEndOf="@+id/buttonSeminarKp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/buttonSeminarKp"
+                        app:layout_constraintTop_toBottomOf="@+id/buttonSeminarKp" />
+
+                    <Button
+                        android:id="@+id/buttonInstansi"
+                        android:layout_width="280dp"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="List Usulan Instansi"
+                        app:cornerRadius="25dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/buttonNilaiKp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/buttonNilaiKp"
+                        app:layout_constraintTop_toBottomOf="@+id/buttonNilaiKp" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/buttonPembimbingKp"
-                android:layout_width="280dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="42dp"
-                android:fontFamily="@font/poppins"
-                android:text="Pembimbing KP"
-                app:cornerRadius="25dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.506"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetailMhsKpPerusahaan"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/buttonLogbookKp"
-                android:layout_width="280dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins"
-                android:text="Logbook KP"
-                app:cornerRadius="25dp"
-                app:layout_constraintEnd_toEndOf="@+id/buttonPembimbingKp"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/buttonPembimbingKp"
-                app:layout_constraintTop_toBottomOf="@+id/buttonPembimbingKp" />
-
-            <Button
-                android:id="@+id/buttonSeminarKp"
-                android:layout_width="280dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins"
-                android:text="Seminar KP"
-                app:cornerRadius="25dp"
-                app:layout_constraintEnd_toEndOf="@+id/buttonLogbookKp"
-                app:layout_constraintStart_toStartOf="@+id/buttonLogbookKp"
-                app:layout_constraintTop_toBottomOf="@+id/buttonLogbookKp" />
-
-            <Button
-                android:id="@+id/buttonNilaiKp"
-                android:layout_width="280dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins"
-                android:text="Nilai KP"
-                app:cornerRadius="25dp"
-                app:layout_constraintEnd_toEndOf="@+id/buttonSeminarKp"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/buttonSeminarKp"
-                app:layout_constraintTop_toBottomOf="@+id/buttonSeminarKp" />
-
-            <Button
-                android:id="@+id/buttonInstansi"
-                android:layout_width="280dp"
-                android:layout_height="54dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/poppins"
-                android:text="Instansi"
-                app:cornerRadius="25dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/buttonNilaiKp"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/buttonNilaiKp"
-                app:layout_constraintTop_toBottomOf="@+id/buttonNilaiKp" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.cardview.widget.CardView>
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:height="54dp"
+                android:backgroundTint="#DB2929"
+                android:text="Batalkan KP"
+                app:cornerRadius="25dp" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
