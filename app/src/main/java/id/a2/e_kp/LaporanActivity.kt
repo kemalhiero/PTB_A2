@@ -3,7 +3,6 @@ package id.a2.e_kp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.adapters.laporanKpAdapter
@@ -47,7 +46,6 @@ class LaporanActivity : AppCompatActivity() {
         adapter = laporanKpAdapter(data)
         adapter.setOnClickListener(object : laporanKpAdapter.clickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@LaporanActivity, "Ini item no ${position + 1}", Toast.LENGTH_SHORT).show()
                 val DetailLaporanKpActivity = Intent (this@LaporanActivity, DetailLaporanKpActivity::class.java)
                 startActivity(DetailLaporanKpActivity)
             }

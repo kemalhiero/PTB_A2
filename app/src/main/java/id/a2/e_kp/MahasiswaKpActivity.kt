@@ -3,7 +3,6 @@ package id.a2.e_kp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.adapters.MahasiswaKpAdapter
@@ -35,7 +34,6 @@ class MahasiswaKpActivity : AppCompatActivity() {
         adapter = MahasiswaKpAdapter(data)
         adapter.setOnClickListener(object : MahasiswaKpAdapter.clickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@MahasiswaKpActivity, "Ini item no ${position + 1}", Toast.LENGTH_SHORT).show()
                 val detailMahasiswa = Intent (this@MahasiswaKpActivity, DetailMahasiswaKpActivity::class.java)
                 startActivity(detailMahasiswa)
             }
