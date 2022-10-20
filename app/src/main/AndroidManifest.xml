@@ -12,14 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EKP"
         tools:targetApi="31">
-        <activity
 
+        <activity
             android:name=".DetailSeminarActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".DaftarSeminarKpActivity"
             android:exported="false">
@@ -27,16 +28,23 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
-            android:name=".SeminarKpActivity"
-
             android:name=".PersetujuanNilaiActivity"
-
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".SeminarKpActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".LogbookKpActivity"
             android:exported="false">
@@ -44,6 +52,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".DosenPembimbingActivity"
             android:exported="false">
@@ -51,6 +60,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".DetailUsulanKpActivity"
             android:exported="false">
@@ -58,6 +68,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".DetailMahasiswaKpActivity"
             android:exported="false">
@@ -65,6 +76,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".DetailLaporanKpActivity"
             android:exported="false">
@@ -72,6 +84,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".MahasiswaKpActivity"
             android:exported="false">
@@ -79,6 +92,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".UsulanKpActivity"
             android:exported="false">
@@ -86,6 +100,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".LaporanActivity"
             android:exported="false">
