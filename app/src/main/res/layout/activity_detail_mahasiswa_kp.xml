@@ -143,7 +143,7 @@
                 android:layout_height="54dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins"
-                android:text="Persetujuan Nilai KP"
+                android:text="Nilai KP"
                 app:cornerRadius="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/buttonSeminarKp"
                 app:layout_constraintHorizontal_bias="0.0"
