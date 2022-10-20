@@ -31,6 +31,20 @@ class DetailMahasiswaKpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        lateinit var btnSeminarKp : Button
+        btnSeminarKp  = findViewById(R.id.buttonSeminarKp)
+        btnSeminarKp.setOnClickListener{
+            intent = Intent(applicationContext, SeminarKpActivity::class.java)
+            startActivity(intent)
+        }
+
+        lateinit var btnNilaiKp : Button
+        btnNilaiKp  = findViewById(R.id.buttonNilaiKp)
+        btnNilaiKp.setOnClickListener{
+            intent = Intent(applicationContext, PersetujuanNilaiActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }
