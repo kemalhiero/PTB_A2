@@ -22,7 +22,7 @@ class UsulanKpAdapter(private val data:ArrayList<UsulanKp>):
     }
 
     inner class UsulanKpViewHolder(itemView: View, listener: clickListener):RecyclerView.ViewHolder(itemView) {
-        private val nama:TextView =itemView.findViewById(R.id.textViewNamaMahasiswaUsulanKp)
+        private val nama:TextView = itemView.findViewById(R.id.textViewNamaMahasiswaUsulanKp)
         private val nim:TextView = itemView.findViewById(R.id.textViewNimUsulanKp)
 
         fun bind(data: UsulanKp){
