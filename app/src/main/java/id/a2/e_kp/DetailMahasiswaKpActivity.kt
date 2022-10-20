@@ -10,31 +10,32 @@ class DetailMahasiswaKpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_mahasiswa_kp)
 
-        lateinit var button : Button
-        button  = findViewById(R.id.buttonPembimbingKp)
-        button.setOnClickListener{
+        lateinit var btnPembimbingKp : Button
+        btnPembimbingKp  = findViewById(R.id.buttonPembimbingKp)
+        btnPembimbingKp.setOnClickListener{
             intent = Intent(applicationContext, DosenPembimbingActivity::class.java)
             startActivity(intent)
         }
 
-        lateinit var button1 : Button
-        button1  = findViewById(R.id.buttonLogbookKp)
-        button1.setOnClickListener{
+        lateinit var btnLogbookKp : Button
+        btnLogbookKp  = findViewById(R.id.buttonLogbookKp)
+        btnLogbookKp.setOnClickListener{
             intent = Intent(applicationContext, LogbookKpActivity::class.java)
             startActivity(intent)
         }
 
 
-        lateinit var button2 : Button
-        button1  = findViewById(R.id.buttonSeminarKp)
-        button1.setOnClickListener{
+        lateinit var btnSeminarKp : Button
+        btnSeminarKp  = findViewById(R.id.buttonSeminarKp)
+        btnSeminarKp.setOnClickListener{
             intent = Intent(applicationContext, SeminarKpActivity::class.java)
+            startActivity(intent)
+        }
 
-        lateinit var button4 : Button
-        button4  = findViewById(R.id.buttonNilaiKp)
-        button4.setOnClickListener{
+        lateinit var btnNilaiKp : Button
+        btnNilaiKp  = findViewById(R.id.buttonNilaiKp)
+        btnNilaiKp.setOnClickListener{
             intent = Intent(applicationContext, PersetujuanNilaiActivity::class.java)
-
             startActivity(intent)
         }
 
