@@ -11,14 +11,14 @@ import id.a2.e_kp.models.UsulanKp
 class UsulanKpAdapter(private val data:ArrayList<UsulanKp>):
     RecyclerView.Adapter<UsulanKpAdapter.UsulanKpViewHolder>() {
 
-    private lateinit var UsulanKpListener: clickListener
+    private lateinit var usulanKpListener: clickListener
 
     interface clickListener {
-        fun onItemClick(position: Int)
+        fun onItemClick(position: Int)//objek usulankp
     }
 
     fun setOnClickListener(listener: clickListener) {
-        UsulanKpListener = listener
+        usulanKpListener = listener
     }
 
     inner class UsulanKpViewHolder(itemView: View, listener: clickListener):RecyclerView.ViewHolder(itemView) {
@@ -40,7 +40,7 @@ class UsulanKpAdapter(private val data:ArrayList<UsulanKp>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsulanKpViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_usulan_kp, parent, false)
-        return UsulanKpViewHolder(view, UsulanKpListener)
+        return UsulanKpViewHolder(view, usulanKpListener)
     }
 
     override fun onBindViewHolder(holder: UsulanKpViewHolder, position: Int) {

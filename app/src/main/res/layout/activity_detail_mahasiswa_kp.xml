@@ -159,7 +159,7 @@
                         android:layout_height="54dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Nilai"
+                        android:text="Persetujuan Nilai"
                         android:textAllCaps="false"
                         app:cornerRadius="25dp"
                         app:layout_constraintEnd_toEndOf="@+id/buttonSeminarKp"
@@ -174,7 +174,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="24dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Instansi"
+                        android:text="Persetujuan Instansi"
                         android:textAllCaps="false"
                         app:cornerRadius="25dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -188,7 +188,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnSetuju"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"

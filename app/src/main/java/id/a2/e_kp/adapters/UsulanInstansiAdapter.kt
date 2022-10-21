@@ -14,11 +14,15 @@ class UsulanInstansiAdapter(private val data:ArrayList<UsulanInstansi>):
 
     inner class UsulanInstansiViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val namaPerusahaan:TextView = itemView.findViewById(R.id.tvNamaPerusahaan)
-        //private val status: ImageView = itemView.findViewById(R.id.ivStatusUsulanInstansi)
+        private val status: ImageView = itemView.findViewById(R.id.ivStatusUsulanInstansi)
 
         fun bind(data:UsulanInstansi){
             namaPerusahaan.text = data.nama
-            //status.setImageResource(R.drawable.ikon_y_petak)
+            if(data.status==true){
+                status.setImageResource(R.drawable.ikon_y_petak)
+            }else{
+                status.setImageResource(R.drawable.ikon_x_petak)
+            }
         }
     }
 

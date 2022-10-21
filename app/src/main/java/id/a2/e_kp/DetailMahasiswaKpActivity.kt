@@ -31,13 +31,9 @@ class DetailMahasiswaKpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
-
         lateinit var btnSeminarKp : Button
         btnSeminarKp  = findViewById(R.id.buttonSeminarKp)
         btnSeminarKp.setOnClickListener{
-
             intent = Intent(applicationContext, SeminarKpActivity::class.java)
             startActivity(intent)
         }
