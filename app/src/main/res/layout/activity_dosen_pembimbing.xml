@@ -98,7 +98,7 @@
                     android:inputType="none"></AutoCompleteTextView>
 
             </com.google.android.material.textfield.TextInputLayout>
-            >
+
 
 
 
@@ -112,29 +112,29 @@
         android:id="@+id/button5"
         android:layout_width="126dp"
         android:layout_height="56dp"
-        android:text="Pilih"
+        android:backgroundTint="#DB2929"
+        android:text="Batal"
+        app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewDosenPembimbing"
-        app:layout_constraintVertical_bias="0.142"
-        app:cornerRadius="25dp"
-        />
+        app:layout_constraintVertical_bias="0.142" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="126dp"
         android:layout_height="56dp"
-        android:backgroundTint="#DB2929"
-        android:text="Batal"
+        android:backgroundTint="@color/ijo"
+        android:text="Pilih"
+        app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewDosenPembimbing"
-        app:layout_constraintVertical_bias="0.143"
-        app:cornerRadius="25dp"/>
+        app:layout_constraintVertical_bias="0.143" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

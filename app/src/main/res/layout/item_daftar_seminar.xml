@@ -29,10 +29,10 @@
 
         <TextView
             android:id="@+id/textViewNamaMahasiswaKp"
-            android:layout_width="210dp"
+            android:layout_width="0dp"
             android:layout_height="28dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="168dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Jokowi"
             android:textColor="@color/black"

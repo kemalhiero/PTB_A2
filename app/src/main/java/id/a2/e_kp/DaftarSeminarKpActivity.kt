@@ -34,8 +34,8 @@ class DaftarSeminarKpActivity : AppCompatActivity() {
         adapter = DaftarSeminarAdapter(data)
         adapter.setOnClickListener(object : DaftarSeminarAdapter.clickListener{
             override fun onItemClick(position: Int) {
-                val detailSeminar = Intent (this@DaftarSeminarKpActivity, DetailSeminarActivity::class.java)
-                startActivity(detailSeminar)
+              //  val detailSeminar = Intent (this@DaftarSeminarKpActivity, DetailSeminarActivity::class.java)
+              //  startActivity(detailSeminar)
             }
         })
 
