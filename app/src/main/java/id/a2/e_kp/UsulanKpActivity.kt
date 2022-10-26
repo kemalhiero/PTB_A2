@@ -3,7 +3,6 @@ package id.a2.e_kp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.adapters.UsulanKpAdapter
@@ -32,10 +31,8 @@ class UsulanKpActivity : AppCompatActivity() {
         data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
         data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
 
-
         recyclerView =findViewById(R.id.rvUsulanKP)
         adapter = UsulanKpAdapter(data)
-
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
@@ -47,8 +44,6 @@ class UsulanKpActivity : AppCompatActivity() {
             }
         })
 
-
     }
-
 
 }

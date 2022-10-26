@@ -2,61 +2,50 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvItemDaftarSeminar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="6dp"
-    app:cardCornerRadius="20dp"
     android:layout_marginHorizontal="15dp"
     android:layout_marginVertical="12dp"
+    android:paddingHorizontal="10dp"
     android:paddingVertical="10dp"
-    android:paddingHorizontal="10dp">
+    android:textAlignment="textStart"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageViewMahasiswaSeminarKp"
-            android:layout_width="99dp"
-            android:layout_height="93dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/woman" />
-
         <TextView
             android:id="@+id/textViewNamaMahasiswaKp"
-            android:layout_width="0dp"
-            android:layout_height="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="96dp"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Jokowi"
+            android:text="Joko Widodo"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.149"
-            app:layout_constraintStart_toEndOf="@+id/imageViewMahasiswaSeminarKp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.19" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewNimMahasiswaKp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins"
             android:text="2011521000"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewNamaMahasiswaKp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNamaMahasiswaKp"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewNamaMahasiswaKp"
+            app:layout_constraintStart_toEndOf="@+id/textViewNamaMahasiswaKp"
+            app:layout_constraintTop_toTopOf="@+id/textViewNamaMahasiswaKp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

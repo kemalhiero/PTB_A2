@@ -11,11 +11,12 @@
         android:id="@+id/imageView"
         android:layout_width="237dp"
         android:layout_height="130dp"
-        android:layout_marginTop="92dp"
         android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08"
         app:srcCompat="@drawable/logo" />
 
     <TextView
@@ -26,8 +27,8 @@
         android:text="@string/teksLogin"
         android:textColor="#000000"
         android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -43,6 +44,7 @@
         app:boxCornerRadiusBottomStart="12dp"
         app:boxCornerRadiusTopEnd="12dp"
         app:boxCornerRadiusTopStart="12dp"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -50,7 +52,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputUsername"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +78,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -82,12 +88,16 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textSize="16sp"
         app:boxCornerRadiusBottomEnd="26dp"
         app:boxCornerRadiusBottomStart="26dp"
         app:boxCornerRadiusTopEnd="26dp"
         app:boxCornerRadiusTopStart="26dp"
-        android:text="Login"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="@+id/textInputPassword"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textInputPassword"
         app:layout_constraintTop_toBottomOf="@+id/textInputPassword" />
 

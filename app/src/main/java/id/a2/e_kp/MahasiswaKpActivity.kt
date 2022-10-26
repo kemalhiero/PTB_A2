@@ -17,21 +17,17 @@ class MahasiswaKpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mahasiswa_kp)
 
-        init()
-
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
-    }
-
-    private fun init(){
-        recyclerView =findViewById(R.id.rvMahasiswaKP)
-
         val data =ArrayList<MahasiswaKp>()
         data.add(MahasiswaKp(1,null,"Hagi Siraj", "2011521015"))
         data.add(MahasiswaKp(1,null,"Delicia Syifa", "201152027"))
         data.add(MahasiswaKp(1,null,"Kemal Muhammad", "2011523019"))
 
+        recyclerView =findViewById(R.id.rvMahasiswaKP)
         adapter = MahasiswaKpAdapter(data)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
+
         adapter.setOnClickListener(object : MahasiswaKpAdapter.clickListener{
             override fun onItemClick(position: Int) {
                 val detailMahasiswa = Intent (this@MahasiswaKpActivity, DetailMahasiswaKpActivity::class.java)
@@ -39,6 +35,6 @@ class MahasiswaKpActivity : AppCompatActivity() {
             }
         })
 
-
     }
+
 }

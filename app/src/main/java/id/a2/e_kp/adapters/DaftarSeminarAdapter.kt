@@ -13,37 +13,20 @@ import id.a2.e_kp.models.DaftarSeminar
 class DaftarSeminarAdapter(private val data:ArrayList<DaftarSeminar>):
     RecyclerView.Adapter<DaftarSeminarAdapter.DaftarSeminarViewHolder>() {
 
-    private lateinit var DaftarSeminarListener: clickListener
 
-    interface clickListener {
-        fun onItemClick(position: Int)
-    }
-
-    fun setOnClickListener(listener: clickListener) {
-        DaftarSeminarListener = listener
-    }
-
-    inner class DaftarSeminarViewHolder(itemView: View, listener: clickListener): RecyclerView.ViewHolder(itemView) {
+    inner class DaftarSeminarViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val nama: TextView =itemView.findViewById(R.id.textViewNamaMahasiswaKp)
         private val nim: TextView = itemView.findViewById(R.id.textViewNimMahasiswaKp)
-
 
         fun bind(data: DaftarSeminar){
             nama.text = data.nama
             nim.text = data.nim
         }
-
-        init {
-            itemView.setOnClickListener {
-                listener.onItemClick(adapterPosition)
-            }
-        }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DaftarSeminarViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_daftar_seminar, parent, false)
-        return DaftarSeminarViewHolder(view, DaftarSeminarListener)
+        return DaftarSeminarViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: DaftarSeminarViewHolder, position: Int) {
