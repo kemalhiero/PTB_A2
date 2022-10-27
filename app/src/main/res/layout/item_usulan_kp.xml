@@ -28,7 +28,7 @@
             app:srcCompat="@drawable/logo_unand_ketek" />
 
         <TextView
-            android:id="@+id/textViewNamaMahasiswaUsulanKp"
+            android:id="@+id/tvNamaMahasiswaUsulanKp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -45,7 +45,7 @@
             app:layout_constraintVertical_bias="0.24000001" />
 
         <TextView
-            android:id="@+id/textViewNimUsulanKp"
+            android:id="@+id/tvNimUsulanKp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -54,7 +54,7 @@
             android:text="2011521000"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewNamaMahasiswaUsulanKp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNamaMahasiswaUsulanKp" />
+            app:layout_constraintStart_toStartOf="@+id/tvNamaMahasiswaUsulanKp"
+            app:layout_constraintTop_toBottomOf="@+id/tvNamaMahasiswaUsulanKp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

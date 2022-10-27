@@ -5,15 +5,20 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import id.a2.e_kp.databinding.ActivitySplashScreenBinding
 
 class SplashScreen : AppCompatActivity() {
+
+    lateinit var binding: ActivitySplashScreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.activity_splash_screen)
+        setContentView(binding.root)
 
         supportActionBar?.hide()
         Handler().postDelayed({

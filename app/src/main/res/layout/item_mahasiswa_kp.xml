@@ -28,7 +28,7 @@
             app:srcCompat="@drawable/man" />
 
         <TextView
-            android:id="@+id/textViewNamaMahasiswaKp"
+            android:id="@+id/tvNamaMahasiswaKp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -45,7 +45,7 @@
             app:layout_constraintVertical_bias="0.24000001" />
 
         <TextView
-            android:id="@+id/textViewNimMahasiswaKp"
+            android:id="@+id/tvNimMahasiswaKp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -55,8 +55,8 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewNamaMahasiswaKp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNamaMahasiswaKp"
+            app:layout_constraintStart_toStartOf="@+id/tvNamaMahasiswaKp"
+            app:layout_constraintTop_toBottomOf="@+id/tvNamaMahasiswaKp"
             app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

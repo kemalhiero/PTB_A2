@@ -1,33 +1,29 @@
 package id.a2.e_kp.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.R
+import id.a2.e_kp.databinding.ItemUsulanInstansiBinding
 import id.a2.e_kp.models.UsulanInstansi
 
 class UsulanInstansiAdapter(private val data:ArrayList<UsulanInstansi>):
     RecyclerView.Adapter<UsulanInstansiAdapter.UsulanInstansiViewHolder>() {
 
-    inner class UsulanInstansiViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        private val namaPerusahaan:TextView = itemView.findViewById(R.id.tvNamaPerusahaan)
-        private val status: ImageView = itemView.findViewById(R.id.ivStatusUsulanInstansi)
+    inner class UsulanInstansiViewHolder(val itemBinding: ItemUsulanInstansiBinding): RecyclerView.ViewHolder(itemBinding.root){
 
         fun bind(data:UsulanInstansi){
-            namaPerusahaan.text = data.nama
+            itemBinding.tvNamaPerusahaan.text = data.nama
             if(data.status==true){
-                status.setImageResource(R.drawable.ikon_y_petak)
+                itemBinding.ivStatusUsulanInstansi.setImageResource(R.drawable.ikon_y_petak)
             }else{
-                status.setImageResource(R.drawable.ikon_x_petak)
+                itemBinding.ivStatusUsulanInstansi.setImageResource(R.drawable.ikon_x_petak)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsulanInstansiViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_usulan_instansi, parent, false)
+        val view = ItemUsulanInstansiBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return UsulanInstansiViewHolder(view)
     }
 

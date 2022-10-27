@@ -3,7 +3,6 @@ package id.a2.e_kp.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.R
@@ -15,8 +14,8 @@ class DaftarSeminarAdapter(private val data:ArrayList<DaftarSeminar>):
 
 
     inner class DaftarSeminarViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        private val nama: TextView =itemView.findViewById(R.id.textViewNamaMahasiswaKp)
-        private val nim: TextView = itemView.findViewById(R.id.textViewNimMahasiswaKp)
+        private val nama: TextView =itemView.findViewById(R.id.tvNamaMahasiswaKp)
+        private val nim: TextView = itemView.findViewById(R.id.tvNimMahasiswaKp)
 
         fun bind(data: DaftarSeminar){
             nama.text = data.nama

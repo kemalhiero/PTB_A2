@@ -1,14 +1,10 @@
 package id.a2.e_kp.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import id.a2.e_kp.R
+import id.a2.e_kp.databinding.ItemMahasiswaKpBinding
 import id.a2.e_kp.models.MahasiswaKp
-
-
 
 class MahasiswaKpAdapter (private val data:ArrayList<MahasiswaKp>):
     RecyclerView.Adapter<MahasiswaKpAdapter.MahasiswaKpViewHolder>(){
@@ -22,13 +18,11 @@ class MahasiswaKpAdapter (private val data:ArrayList<MahasiswaKp>):
         MahasiswaKpListener = listener
     }
 
-    inner class MahasiswaKpViewHolder(itemView: View, listener: clickListener):RecyclerView.ViewHolder(itemView) {
-        private val nama:TextView =itemView.findViewById(R.id.textViewNamaMahasiswaKp)
-        private val nim:TextView = itemView.findViewById(R.id.textViewNimMahasiswaKp)
+    inner class MahasiswaKpViewHolder(val itemBinding: ItemMahasiswaKpBinding, listener: clickListener):RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(data: MahasiswaKp){
-            nama.text = data.nama
-            nim.text = data.nim
+            itemBinding.tvNamaMahasiswaKp.text = data.nama
+            itemBinding.tvNimMahasiswaKp.text = data.nim
         }
 
         init {
@@ -40,7 +34,7 @@ class MahasiswaKpAdapter (private val data:ArrayList<MahasiswaKp>):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MahasiswaKpViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_mahasiswa_kp, parent, false)
+        val view = ItemMahasiswaKpBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MahasiswaKpViewHolder(view, MahasiswaKpListener)
     }
 

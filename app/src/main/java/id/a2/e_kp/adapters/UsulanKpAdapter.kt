@@ -1,33 +1,29 @@
 package id.a2.e_kp.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import id.a2.e_kp.R
+import id.a2.e_kp.databinding.ItemUsulanKpBinding
 import id.a2.e_kp.models.UsulanKp
 
 class UsulanKpAdapter(private val data:ArrayList<UsulanKp>):
     RecyclerView.Adapter<UsulanKpAdapter.UsulanKpViewHolder>() {
 
-    private lateinit var usulanKpListener: clickListener
+    private lateinit var usulanKpListener: ClickListener
 
-    interface clickListener {
+    interface ClickListener {
         fun onItemClick(position: Int)//objek usulankp
     }
 
-    fun setOnClickListener(listener: clickListener) {
+    fun setOnClickListener(listener: ClickListener) {
         usulanKpListener = listener
     }
 
-    inner class UsulanKpViewHolder(itemView: View, listener: clickListener):RecyclerView.ViewHolder(itemView) {
-        private val nama:TextView = itemView.findViewById(R.id.textViewNamaMahasiswaUsulanKp)
-        private val nim:TextView = itemView.findViewById(R.id.textViewNimUsulanKp)
+    inner class UsulanKpViewHolder(val itemBinding: ItemUsulanKpBinding, listener: ClickListener):RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(data: UsulanKp){
-            nama.text = data.nama
-            nim.text = data.nim
+            itemBinding.tvNamaMahasiswaUsulanKp.text = data.nama
+            itemBinding.tvNimUsulanKp.text = data.nim
         }
 
         init {
@@ -39,7 +35,7 @@ class UsulanKpAdapter(private val data:ArrayList<UsulanKp>):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsulanKpViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_usulan_kp, parent, false)
+        val view = ItemUsulanKpBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return UsulanKpViewHolder(view, usulanKpListener)
     }
 

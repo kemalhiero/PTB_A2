@@ -18,7 +18,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textViewNamaMahasiswaKp"
+            android:id="@+id/tvNamaPesertaSeminarKp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -36,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewNimMahasiswaKp"
+            android:id="@+id/tvNimPesertaSeminarKp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -44,8 +44,8 @@
             android:text="2011521000"
             android:textColor="@color/black"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewNamaMahasiswaKp"
-            app:layout_constraintStart_toEndOf="@+id/textViewNamaMahasiswaKp"
-            app:layout_constraintTop_toTopOf="@+id/textViewNamaMahasiswaKp" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvNamaPesertaSeminarKp"
+            app:layout_constraintStart_toEndOf="@+id/tvNamaPesertaSeminarKp"
+            app:layout_constraintTop_toTopOf="@+id/tvNamaPesertaSeminarKp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

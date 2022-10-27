@@ -58,11 +58,9 @@
                         android:layout_width="99dp"
                         android:layout_height="98dp"
                         android:layout_marginStart="40dp"
-                        android:layout_marginBottom="16dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDetailMhsKpPerusahaan"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.086"
+                        app:layout_constraintTop_toTopOf="@+id/tvDetailMhsKpNama"
                         app:srcCompat="@drawable/man" />
 
                     <TextView
@@ -195,7 +193,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
                 android:height="54dp"
-                android:backgroundTint="#DB2929"
+                android:backgroundTint="@color/merah"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Batalkan KP"
                 android:textAllCaps="false"
