@@ -67,7 +67,7 @@
                         app:srcCompat="@drawable/logo_unand_ketek" />
 
                     <TextView
-                        android:id="@+id/tvnamanilai"
+                        android:id="@+id/tvNamaMhsPersetujuanNilai"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
@@ -83,15 +83,15 @@
                         app:layout_constraintVertical_bias="0.06999999" />
 
                     <TextView
-                        android:id="@+id/tvnimnilai"
+                        android:id="@+id/tvNimMhsPersetujuanNilai"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:text="2011521015"
                         android:textColor="#000000"
                         android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="@+id/tvnamanilai"
-                        app:layout_constraintTop_toBottomOf="@+id/tvnamanilai" />
+                        app:layout_constraintStart_toStartOf="@+id/tvNamaMhsPersetujuanNilai"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNamaMhsPersetujuanNilai" />
 
                     <TextView
                         android:id="@+id/tvperusahaannilai"
@@ -102,8 +102,8 @@
                         android:textColor="#000000"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/tvnimnilai"
-                        app:layout_constraintTop_toBottomOf="@+id/tvnimnilai"
+                        app:layout_constraintStart_toStartOf="@+id/tvNimMhsPersetujuanNilai"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNimMhsPersetujuanNilai"
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
@@ -524,7 +524,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/btnSetuju"
+                android:id="@+id/btnBatalkanKp"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="32dp"

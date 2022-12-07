@@ -41,7 +41,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textViewLaporanNama"
+                android:id="@+id/tvNamaDetailLaporan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -55,7 +55,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textViewLaporanNim"
+                android:id="@+id/tvNimDetailLaporan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -64,10 +64,10 @@
                 android:text="NIM"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewLaporanNama" />
+                app:layout_constraintTop_toBottomOf="@+id/tvNamaDetailLaporan" />
 
             <TextView
-                android:id="@+id/textViewLaporanDospem"
+                android:id="@+id/tvDospemDetailLaporan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -76,10 +76,10 @@
                 android:text="Dosen Pembimbing"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewLaporanNim" />
+                app:layout_constraintTop_toBottomOf="@+id/tvNimDetailLaporan" />
 
             <TextView
-                android:id="@+id/textViewLaporanTanggalSelesai"
+                android:id="@+id/tvTanggalSelesaiDetailLaporan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -88,10 +88,10 @@
                 android:text="Tanggal Selesai KP"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewLaporanDospem" />
+                app:layout_constraintTop_toBottomOf="@+id/tvDospemDetailLaporan" />
 
             <TextView
-                android:id="@+id/textViewLaporanNilaiAkhir"
+                android:id="@+id/tvNilaiAkhirDetailLaporan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -102,7 +102,7 @@
                 android:textColor="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewLaporanTanggalSelesai" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTanggalSelesaiDetailLaporan" />
 
             <TextView
                 android:id="@+id/titik_titik"
@@ -113,8 +113,8 @@
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.42"
-                app:layout_constraintStart_toEndOf="@+id/textViewLaporanNama"
-                app:layout_constraintTop_toTopOf="@+id/textViewLaporanNama" />
+                app:layout_constraintStart_toEndOf="@+id/tvNamaDetailLaporan"
+                app:layout_constraintTop_toTopOf="@+id/tvNamaDetailLaporan" />
 
             <TextView
                 android:id="@+id/titik_titik2"
@@ -124,7 +124,7 @@
                 android:text="@string/titikDua"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="@+id/titik_titik"
-                app:layout_constraintTop_toTopOf="@+id/textViewLaporanNim" />
+                app:layout_constraintTop_toTopOf="@+id/tvNimDetailLaporan" />
 
             <TextView
                 android:id="@+id/titik_titik3"
@@ -134,7 +134,7 @@
                 android:text="@string/titikDua"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="@+id/titik_titik2"
-                app:layout_constraintTop_toTopOf="@+id/textViewLaporanDospem" />
+                app:layout_constraintTop_toTopOf="@+id/tvDospemDetailLaporan" />
 
             <TextView
                 android:id="@+id/titik_titik4"
@@ -144,7 +144,7 @@
                 android:text="@string/titikDua"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="@+id/titik_titik3"
-                app:layout_constraintTop_toTopOf="@+id/textViewLaporanTanggalSelesai" />
+                app:layout_constraintTop_toTopOf="@+id/tvTanggalSelesaiDetailLaporan" />
 
             <TextView
                 android:id="@+id/titik_titik5"
@@ -154,7 +154,63 @@
                 android:text="@string/titikDua"
                 android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="@+id/titik_titik4"
-                app:layout_constraintTop_toTopOf="@+id/textViewLaporanNilaiAkhir" />
+                app:layout_constraintTop_toTopOf="@+id/tvNilaiAkhirDetailLaporan" />
+
+            <TextView
+                android:id="@+id/tvNamaMhsDetailLaporan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Hagi Siraj"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/titik_titik"
+                app:layout_constraintStart_toEndOf="@+id/titik_titik"
+                app:layout_constraintTop_toTopOf="@+id/titik_titik" />
+
+            <TextView
+                android:id="@+id/tvNimMhsDetailLaporan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="2011521015"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/titik_titik2"
+                app:layout_constraintStart_toStartOf="@+id/tvNamaMhsDetailLaporan"
+                app:layout_constraintTop_toTopOf="@+id/titik_titik2" />
+
+            <TextView
+                android:id="@+id/tvDosenPembimbingDetailLaporan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Husnil Kamil"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/titik_titik3"
+                app:layout_constraintStart_toStartOf="@+id/tvNimMhsDetailLaporan"
+                app:layout_constraintTop_toTopOf="@+id/titik_titik3" />
+
+            <TextView
+                android:id="@+id/tvTglSelesaiKpDetailLaporan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="7 November 2022"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/titik_titik4"
+                app:layout_constraintStart_toStartOf="@+id/tvDosenPembimbingDetailLaporan"
+                app:layout_constraintTop_toTopOf="@+id/titik_titik4" />
+
+            <TextView
+                android:id="@+id/tvNilaiAkhirKpDetailLaporan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="A+++++++"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/titik_titik5"
+                app:layout_constraintStart_toStartOf="@+id/tvTglSelesaiKpDetailLaporan"
+                app:layout_constraintTop_toTopOf="@+id/titik_titik5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

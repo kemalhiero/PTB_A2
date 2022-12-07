@@ -7,7 +7,7 @@
     tools:context=".DosenPembimbingActivity">
 
     <TextView
-        android:id="@+id/textViewDetailMahasiswaKp"
+        android:id="@+id/tvJudulDetailMahasiswaKp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -41,7 +41,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tvDetailMhsKpNama"
+                android:id="@+id/tvNamaMhsSeminar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
@@ -87,7 +87,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvDetailMhsKpNama"
+                app:layout_constraintStart_toStartOf="@+id/tvNamaMhsSeminar"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0">
 
@@ -114,6 +114,7 @@
         android:layout_height="56dp"
         android:backgroundTint="#DB2929"
         android:text="Batal"
+        android:textAllCaps="false"
         app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,6 +129,7 @@
         android:layout_height="56dp"
         android:backgroundTint="@color/ijo"
         android:text="Pilih"
+        android:textAllCaps="false"
         app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

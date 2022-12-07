@@ -14,8 +14,8 @@ class DaftarSeminarAdapter(private val data:ArrayList<DaftarSeminar>):
 
 
     inner class DaftarSeminarViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        private val nama: TextView =itemView.findViewById(R.id.tvNamaMahasiswaKp)
-        private val nim: TextView = itemView.findViewById(R.id.tvNimMahasiswaKp)
+        private val nama: TextView =itemView.findViewById(R.id.tvNamaPesertaSeminarKp)
+        private val nim: TextView = itemView.findViewById(R.id.tvNimPesertaSeminarKp)
 
         fun bind(data: DaftarSeminar){
             nama.text = data.nama

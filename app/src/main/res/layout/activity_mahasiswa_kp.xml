@@ -7,7 +7,7 @@
     tools:context=".MahasiswaKpActivity">
 
     <TextView
-        android:id="@+id/textViewMahasiswa"
+        android:id="@+id/tvJudulMahasiswaKp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"

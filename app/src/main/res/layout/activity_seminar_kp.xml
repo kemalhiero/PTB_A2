@@ -7,7 +7,7 @@
     tools:context="DetailMahasiswaKpActivity">
 
     <TextView
-        android:id="@+id/textViewDetailMahasiswaKp"
+        android:id="@+id/tvJudulDetailMahasiswaKp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
@@ -53,7 +53,7 @@
                 app:srcCompat="@drawable/man" />
 
             <TextView
-                android:id="@+id/tvDetailMhsKpNama"
+                android:id="@+id/tvNamaMhsSeminar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -70,7 +70,7 @@
                 app:layout_constraintVertical_bias="0.084" />
 
             <TextView
-                android:id="@+id/tvDetailMhsKpNim"
+                android:id="@+id/tvNimMhsSeminar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -80,8 +80,8 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvDetailMhsKpNama"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetailMhsKpNama" />
+                app:layout_constraintStart_toStartOf="@+id/tvNamaMhsSeminar"
+                app:layout_constraintTop_toBottomOf="@+id/tvNamaMhsSeminar" />
 
             <TextView
                 android:id="@+id/tvDetailMhsKpPerusahaan"
@@ -94,8 +94,8 @@
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvDetailMhsKpNama"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetailMhsKpNim" />
+                app:layout_constraintStart_toStartOf="@+id/tvNamaMhsSeminar"
+                app:layout_constraintTop_toBottomOf="@+id/tvNimMhsSeminar" />
 
             <Button
                 android:id="@+id/buttonDaftarSeminarKp"

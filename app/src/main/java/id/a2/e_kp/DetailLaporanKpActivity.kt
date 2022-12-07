@@ -2,10 +2,21 @@ package id.a2.e_kp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import id.a2.e_kp.databinding.ActivityDetailLaporanBinding
 
 class DetailLaporanKpActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityDetailLaporanBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_laporan)
+        binding = ActivityDetailLaporanBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val getNama = intent.getStringExtra("namaMahasiswa")
+        binding.tvNamaMhsDetailLaporan.text = getNama.toString()
+        val getNim = intent.getStringExtra("nimMahasiswa")
+        binding.tvNimMhsDetailLaporan.text = getNim.toString()
+
     }
 }

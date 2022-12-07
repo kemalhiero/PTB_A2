@@ -7,7 +7,7 @@
     tools:context="DetailMahasiswaKpActivity">
 
     <TextView
-        android:id="@+id/textViewDetailMahasiswaKp"
+        android:id="@+id/tvJudulDetailMahasiswaKp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
@@ -186,7 +186,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/btnSetuju"
+                android:id="@+id/btnBatalkanKp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
