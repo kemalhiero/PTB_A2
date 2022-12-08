@@ -1,15 +1,27 @@
 package id.a2.e_kp
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import id.a2.e_kp.databinding.ActivityDetailMahasiswaKpBinding
 
 class DetailMahasiswaKpActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityDetailMahasiswaKpBinding
+
+    private val CHANNEL_ID = "channel_id_example1"
+    private val notificationId = 100
+    private val namaNotif = "Batalkan KP"
+    private val deskripsiNotif = "KP nya dibatalkan"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,9 +95,42 @@ class DetailMahasiswaKpActivity : AppCompatActivity() {
         lateinit var btnBatalkanKp : Button
         btnBatalkanKp = binding.btnBatalkanKp
         btnBatalkanKp.setOnClickListener{
-            Toast.makeText(this@DetailMahasiswaKpActivity, "Batalkan KP ${getNama}", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@DetailMahasiswaKpActivity, "Batalkan KP ${getNama}", Toast.LENGTH_SHORT).show()
+            showNotifKpBatal()
         }
 
+    }
+
+    private fun showNotifKpBatal(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val name = namaNotif
+            val descriptionText = deskripsiNotif
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply{
+                description = descriptionText
+            }
+            val notificationManager : NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+
+            // Create an explicit intent for an Activity in your app
+            val intent = Intent(this, DetailMahasiswaKpActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+
+            val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.icon_laporan_kp)
+                .setContentTitle("KP ini dibatalkan")
+                .setContentText("Mohon maaf🙏")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+
+            with(NotificationManagerCompat.from(this)) {
+                // notificationId is a unique int for each notification that you must define
+                notify(notificationId, builder.build())
+            }
+        }
     }
 
 }
