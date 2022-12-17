@@ -1,22 +1,22 @@
 package id.a2.e_kp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.Spinner
 import android.widget.Toast
+import id.a2.e_kp.databinding.ActivityDosenPembimbingBinding
 
 class DosenPembimbingActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityDosenPembimbingBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dosen_pembimbing)
+        binding = ActivityDosenPembimbingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val pilihDosen: AutoCompleteTextView = findViewById(R.id.pilihDosen)
+        val pilihDosen: AutoCompleteTextView = binding.pilihDosen
         val listNumber = ArrayList<String>()
         listNumber.add("Husnil Kamil")
         listNumber.add("Surya Afnarius")

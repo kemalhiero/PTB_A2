@@ -36,15 +36,15 @@ class DetailUsulanKpActivity : AppCompatActivity() {
         lateinit var ivTolakUsulan: ImageView
         ivTolakUsulan = binding.ivTolakUsulan
         ivTolakUsulan.setOnClickListener{
-            //Toast.makeText(this@DetailUsulanKpActivity, "Tolak usulan ${getNama}", Toast.LENGTH_SHORT).show()
-            showNotifTolak()
+            Toast.makeText(this@DetailUsulanKpActivity, "Tolak usulan ${getNama}", Toast.LENGTH_SHORT).show()
+            //showNotifTolak()
         }
 
         lateinit var ivTerimaUsulan: ImageView
         ivTerimaUsulan = binding.ivTerimaUsulan
         ivTerimaUsulan.setOnClickListener{
-            //Toast.makeText(this@DetailUsulanKpActivity, "Terima usulan ${getNama}", Toast.LENGTH_SHORT).show()
-            showNotifTerima()
+            Toast.makeText(this@DetailUsulanKpActivity, "Terima usulan ${getNama}", Toast.LENGTH_SHORT).show()
+            //showNotifTerima()
         }
 
     }
