@@ -10,7 +10,7 @@ import retrofit2.http.POST
 
 interface KpClient {
     @FormUrlEncoded
-    @POST("/api/login/")
+    @POST("/api/login")
     fun login(@Field("username") username: String, @Field("password") password:String): Call<LoginResponse>;
 
     @POST("/api/logout")
