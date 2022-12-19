@@ -1,5 +1,6 @@
 package id.a2.e_kp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,15 @@ class MahasiswaKpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMahasiswaKpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
+        val ada = sharedPref.getString("token",null)
+
+        if (ada==null){
+            intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val data =ArrayList<MahasiswaKp>()
         data.add(MahasiswaKp(1,null,"Hagi Siraj", "2011521015"))

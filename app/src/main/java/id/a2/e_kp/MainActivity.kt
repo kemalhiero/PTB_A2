@@ -1,5 +1,6 @@
 package id.a2.e_kp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPref = getSharedPreferences("prefs",Context.MODE_PRIVATE) ?: return
+        val ada = sharedPref.getString("token",null)
+
+        if (ada==null){
+            intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         lateinit var cardViewUsulanKp: CardView
         cardViewUsulanKp = binding.cardViewUsulanKp

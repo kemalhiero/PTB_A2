@@ -1,5 +1,6 @@
 package id.a2.e_kp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,15 @@ class LogbookKpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLogbookKpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
+        val ada = sharedPref.getString("token",null)
+
+        if (ada==null){
+            intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val getNama = intent.getStringExtra("nama")
         binding.tvNamaMhsListLog.text = getNama.toString()
