@@ -26,11 +26,6 @@ private lateinit var btnkeluar : Button
 
         btnkeluar = findViewById(R.id.btnkeluar)
         btnkeluar.setOnClickListener {
-            customDialog()
-        }
-    }
-
-        private fun customDialog(){
             val dialog = Dialog(this)
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
             dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -48,14 +43,10 @@ private lateinit var btnkeluar : Button
                 intent = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
-
                 dialog.dismiss()
-
-
             }
             dialog.show()
-
-
+        }
 
         val sharedPref = getSharedPreferences("prefs",Context.MODE_PRIVATE) ?: return
         val ada = sharedPref.getString("token",null)
@@ -65,7 +56,6 @@ private lateinit var btnkeluar : Button
             startActivity(intent)
             finish()
         }
-
 
 
         lateinit var cardViewUsulanKp: CardView
@@ -89,5 +79,5 @@ private lateinit var btnkeluar : Button
             startActivity(intent)
         }
     }
-
 }
+

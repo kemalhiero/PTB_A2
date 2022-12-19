@@ -71,11 +71,10 @@
         </activity>
         <activity
             android:name=".LogbookKpActivity"
-            android:exported="true">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
         <activity
             android:name=".DosenPembimbingActivity"
@@ -125,9 +124,6 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
-
         </activity>
         <activity
             android:name=".SplashScreen"

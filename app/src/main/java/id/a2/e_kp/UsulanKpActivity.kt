@@ -31,7 +31,7 @@ class UsulanKpActivity : AppCompatActivity() {
         }
 
         val data =ArrayList<UsulanKp>()
-        data.add(UsulanKp(1,null,"Husnil Kamil", "2011521015"))
+        data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))
         data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
         data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
         data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))

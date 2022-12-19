@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
              android:layout_height="match_parent">
 
@@ -27,14 +28,14 @@
                 app:lottie_rawRes="@raw/logout"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_speed="1.25"/>
+                app:lottie_speed="1.25" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:fontFamily="@font/poppins_bold"
-                android:text="Yain Mau Keluar?"
+                android:text="Yakin Mau Keluar?"
                 android:padding="10dp"/>
 
             <Button
@@ -42,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins_bold"
+                android:backgroundTint="@color/merah"
                 android:text="Yakin"
                 app:layout_constraintBottom_toBottomOf="parent" />
 

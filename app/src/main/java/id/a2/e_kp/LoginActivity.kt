@@ -6,13 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import id.a2.e_kp.databinding.ActivityLoginBinding
 import id.a2.e_kp.models.LoginResponse
 import id.a2.e_kp.network.KpClient
 import id.a2.e_kp.network.NetworkConfig
-import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -62,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
 
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
 
-                    val respon: LoginResponse? = response.body();
+                    val respon: LoginResponse? = response.body()
 
                     if (respon != null && respon.status == "success" && respon.user?.username == "198201182008121002") {
                         Toast.makeText(this@LoginActivity, "Berhasil Login", Toast.LENGTH_SHORT).show()
