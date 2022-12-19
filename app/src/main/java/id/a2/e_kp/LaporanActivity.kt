@@ -21,6 +21,7 @@ class LaporanActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val data =ArrayList<laporanKp>()
+
         data.add(laporanKp(1,null,"Hagi Siraj", "2011521015"))
         data.add(laporanKp(1,null,"Delicia Syifa", "201152027"))
         data.add(laporanKp(1,null,"Kemal Muhammad", "2011523019"))
