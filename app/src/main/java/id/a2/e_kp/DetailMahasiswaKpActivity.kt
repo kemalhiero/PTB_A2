@@ -18,7 +18,7 @@ class DetailMahasiswaKpActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityDetailMahasiswaKpBinding
 
-    private val CHANNEL_ID = "channel_id_example1"
+    private val CHANNEL_ID = "notifBatalKP"
     private val notificationId = 100
     private val namaNotif = "Batalkan KP"
     private val deskripsiNotif = "KP nya dibatalkan"
@@ -119,7 +119,7 @@ class DetailMahasiswaKpActivity : AppCompatActivity() {
             val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
             val builder = NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.icon_laporan_kp)
+                .setSmallIcon(R.drawable.logo_unand_ketek)
                 .setContentTitle("KP ini dibatalkan")
                 .setContentText("Mohon maaf🙏")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)

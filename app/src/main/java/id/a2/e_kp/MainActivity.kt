@@ -7,10 +7,19 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
 import android.widget.Button
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import id.a2.e_kp.databinding.ActivityMainBinding
+import id.a2.e_kp.models.LogoutResponse
+import id.a2.e_kp.models.ProfileResponse
+import id.a2.e_kp.network.KpClient
+import id.a2.e_kp.network.NetworkConfig
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +33,32 @@ private lateinit var btnkeluar : Button
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val sharedPref = getSharedPreferences("prefs",Context.MODE_PRIVATE) ?: return
+        val token = sharedPref.getString("token",null)
+
+        if (token==null){
+            intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        val client: KpClient = NetworkConfig().getService()
+        val call: Call<ProfileResponse> = client.profile("Bearer "+token)
+
+        call.enqueue(object: Callback<ProfileResponse> {
+            override fun onResponse(call: Call<ProfileResponse>, response: Response<ProfileResponse>) {
+                val respon = response.body()
+                val nama = respon?.name
+                binding.textNamaKaprodi.text = nama
+            }
+
+            override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
+                Log.d("profile-debug",t.localizedMessage)
+            }
+
+
+        })
+
         btnkeluar = findViewById(R.id.btnkeluar)
         btnkeluar.setOnClickListener {
             val dialog = Dialog(this)
@@ -33,6 +68,23 @@ private lateinit var btnkeluar : Button
 
             val btnyakin = dialog.findViewById<Button>(R.id.btnyakin)
             btnyakin.setOnClickListener{
+
+                val client: KpClient = NetworkConfig().getService()
+                val call: Call<LogoutResponse> = client.logout("Bearer "+token)
+
+                call.enqueue(object: Callback<LogoutResponse>{
+                    override fun onResponse( call: Call<LogoutResponse>, response: Response<LogoutResponse> ) {
+                        val respon = response.body()
+                        if (respon != null) {
+                            Toast.makeText(this@MainActivity, respon.message, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<LogoutResponse>, t: Throwable) {
+                        Log.d("logout-debug",t.localizedMessage)
+                    }
+
+                })
 
                 val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
                 with (sharedPref.edit()) {
@@ -46,15 +98,6 @@ private lateinit var btnkeluar : Button
                 dialog.dismiss()
             }
             dialog.show()
-        }
-
-        val sharedPref = getSharedPreferences("prefs",Context.MODE_PRIVATE) ?: return
-        val ada = sharedPref.getString("token",null)
-
-        if (ada==null){
-            intent = Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
         }
 
 

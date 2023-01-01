@@ -46,49 +46,58 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.inputPassword.getText().toString()
             Log.d("login debug", username + " " + password)
 
-            val client: KpClient = NetworkConfig().getService()
+            if (username== "" || password== ""){
+                Toast.makeText(this@LoginActivity, "Isi Username dan Password terlebih dahulu", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                val client: KpClient = NetworkConfig().getService()
 
-            progresBar.visibility = View.VISIBLE
+                progresBar.visibility = View.VISIBLE
 
-            val call: Call<LoginResponse> = client.login(username, password)
+                val call: Call<LoginResponse> = client.login(username, password)
 
-            call.enqueue(object : Callback<LoginResponse> {
-                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    Toast.makeText(this@LoginActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
-                    progresBar.visibility = View.GONE
-                }
+                call.enqueue(object : Callback<LoginResponse> {
+                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                        Toast.makeText(this@LoginActivity, "Jaringan anda bermasalah", Toast.LENGTH_SHORT).show()
+                        progresBar.visibility = View.GONE
+                    }
 
-                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
 
-                    val respon: LoginResponse? = response.body()
+                        val respon: LoginResponse? = response.body()
 
-                    if (respon != null && respon.status == "success" && respon.user?.username == "198201182008121002") {
-                        Toast.makeText(this@LoginActivity, "Berhasil Login", Toast.LENGTH_SHORT).show()
 
-                        val token : String? = respon.authorisation?.token
 
-                        val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
-                        with (sharedPref.edit()) {
-                            putString("token", token)
-                            apply()
+                        if (respon != null && respon.status == "success") {
+                            Toast.makeText(this@LoginActivity, "Berhasil Login", Toast.LENGTH_SHORT).show()
+
+                            val token : String? = respon.authorisation?.token
+
+                            val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
+                            with (sharedPref.edit()) {
+                                putString("token", token)
+                                apply()
+                            }
+
+                            intent = Intent(applicationContext, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         }
 
-                        intent = Intent(applicationContext, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
+//                        else if (respon != null && respon.status == "success" && respon.user?.username != "198201182008121002"){
+//                            Toast.makeText(this@LoginActivity, "Anda bukan kepala departemen", Toast.LENGTH_SHORT).show()
+//                        }
 
-                    else if (respon != null && respon.status == "success" && respon.user?.username != "198201182008121002"){
-                        Toast.makeText(this@LoginActivity, "Anda bukan pak husnil", Toast.LENGTH_SHORT).show()
-                    }
+                        else {
+                            Toast.makeText(this@LoginActivity,"Username dan password anda salah",Toast.LENGTH_SHORT).show()
+                        }
 
-                    else {
-                        Toast.makeText(this@LoginActivity,"Username dan password anda salah",Toast.LENGTH_SHORT).show()
+                        progresBar.visibility = View.GONE
                     }
+                })
 
-                    progresBar.visibility = View.GONE
-                }
-            })
+            }
+
         }
 
     }
