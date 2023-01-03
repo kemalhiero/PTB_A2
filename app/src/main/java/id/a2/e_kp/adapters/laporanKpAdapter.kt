@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.R
+import id.a2.e_kp.models.Internships_selesai
 import id.a2.e_kp.models.laporanKp
 
 
-class laporanKpAdapter(private val data:ArrayList<laporanKp>):
+class laporanKpAdapter(private val data:ArrayList<Internships_selesai>):
         RecyclerView.Adapter<laporanKpAdapter.laporanKpViewHolder>() {
 
         private lateinit var laporanKpListener: clickListener
@@ -26,8 +27,8 @@ class laporanKpAdapter(private val data:ArrayList<laporanKp>):
             private val nama: TextView =itemView.findViewById(R.id.tvnamamhsLaporan)
             private val nim: TextView = itemView.findViewById(R.id.tvnimLaporan)
 
-            fun bind(data: laporanKp){
-                nama.text = data.nama
+            fun bind(data: Internships_selesai){
+                nama.text = data.name
                 nim.text = data.nim
             }
 
