@@ -72,10 +72,12 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this@LoginActivity, "Berhasil Login", Toast.LENGTH_SHORT).show()
 
                             val token : String? = respon.authorisation?.token
+                            val namaUser : String? = respon.user?.name
 
                             val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
                             with (sharedPref.edit()) {
                                 putString("token", token)
+                                putString("nama", namaUser)
                                 apply()
                             }
 

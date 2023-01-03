@@ -23,7 +23,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-private lateinit var btnkeluar : Button
+    private lateinit var btnkeluar : Button
 
 
     lateinit var binding: ActivityMainBinding
@@ -35,6 +35,7 @@ private lateinit var btnkeluar : Button
 
         val sharedPref = getSharedPreferences("prefs",Context.MODE_PRIVATE) ?: return
         val token = sharedPref.getString("token",null)
+        val namaUser = sharedPref.getString("nama",null)
 
         if (token==null){
             intent = Intent(applicationContext, LoginActivity::class.java)
@@ -42,22 +43,7 @@ private lateinit var btnkeluar : Button
             finish()
         }
 
-        val client: KpClient = NetworkConfig().getService()
-        val call: Call<ProfileResponse> = client.profile("Bearer "+token)
-
-        call.enqueue(object: Callback<ProfileResponse> {
-            override fun onResponse(call: Call<ProfileResponse>, response: Response<ProfileResponse>) {
-                val respon = response.body()
-                val nama = respon?.name
-                binding.textNamaKaprodi.text = nama
-            }
-
-            override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
-                Log.d("profile-debug",t.localizedMessage)
-            }
-
-
-        })
+        binding.textNamaKaprodi.text = namaUser
 
         btnkeluar = findViewById(R.id.btnkeluar)
         btnkeluar.setOnClickListener {
@@ -89,6 +75,7 @@ private lateinit var btnkeluar : Button
                 val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE)
                 with (sharedPref.edit()) {
                     putString("token", null)
+                    putString("nama", null)
                     apply()
                 }
 
