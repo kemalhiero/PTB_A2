@@ -38,10 +38,15 @@ class ListPerusahaanActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
         val token = sharedPref.getString("token",null)
 
+        if (token==null){
+            intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         val data =ArrayList<CompaniesItem>()
 
         recyclerView =binding.rvListPerusahaan
-
 
         val client: KpClient = NetworkConfig().getService()
         progresBar.visibility = View.VISIBLE
@@ -76,7 +81,7 @@ class ListPerusahaanActivity : AppCompatActivity() {
                 val intentt = Intent (this@ListPerusahaanActivity, AccRejectPerusahaanActivity::class.java)
 //                intentt.putExtra("nama",data.get(position).name)
 //                intentt.putExtra("alamat",data.get(position).address)
-                Toast.makeText(this@ListPerusahaanActivity,data.toString(),Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@ListPerusahaanActivity,data.toString(),Toast.LENGTH_LONG).show()
                 startActivity(intentt)
             }
         })

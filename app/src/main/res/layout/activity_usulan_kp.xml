@@ -34,4 +34,16 @@
         app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/item_usulan_kp" />
 
+    <ProgressBar
+        android:id="@+id/progressBarUsulanKP"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rvUsulanKP" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

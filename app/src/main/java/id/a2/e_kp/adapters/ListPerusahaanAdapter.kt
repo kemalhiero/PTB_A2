@@ -42,8 +42,7 @@ RecyclerView.Adapter<ListPerusahaanAdapter.InstansiViewHolder>(){
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InstansiViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_list_perusahaan, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list_perusahaan, parent, false)
 
         return InstansiViewHolder(view, InstansiListener)
     }

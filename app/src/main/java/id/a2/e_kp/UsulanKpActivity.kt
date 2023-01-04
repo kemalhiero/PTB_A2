@@ -4,11 +4,20 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.adapters.UsulanKpAdapter
 import id.a2.e_kp.databinding.ActivityUsulanKpBinding
 import id.a2.e_kp.models.ListUsulanProposalResponse
+import id.a2.e_kp.models.ProposalsItem
+import id.a2.e_kp.network.KpClient
+import id.a2.e_kp.network.NetworkConfig
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class UsulanKpActivity : AppCompatActivity() {
 
@@ -21,6 +30,11 @@ class UsulanKpActivity : AppCompatActivity() {
         binding = ActivityUsulanKpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val progresBar = binding.progressBarUsulanKP
+        progresBar.visibility = View.GONE
+
+        val adapter: UsulanKpAdapter = UsulanKpAdapter()
+
         val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
         val ada = sharedPref.getString("token",null)
 
@@ -30,19 +44,45 @@ class UsulanKpActivity : AppCompatActivity() {
             finish()
         }
 
-        val data =ArrayList<ListUsulanProposalResponse>()
+        val data =ArrayList<ProposalsItem>()
 
         recyclerView = binding.rvUsulanKP
-        adapter = UsulanKpAdapter(data)
+
+        val client: KpClient = NetworkConfig().getService()
+        progresBar.visibility = View.VISIBLE
+
+        val call: Call<ListUsulanProposalResponse> = client.listUsulanProposal("Bearer "+ada)
+
+        call.enqueue(object: Callback<ListUsulanProposalResponse>{
+            override fun onResponse(
+                call: Call<ListUsulanProposalResponse>,
+                response: Response<ListUsulanProposalResponse>
+            ) {
+                val respon: ListUsulanProposalResponse? = response.body()
+                if (respon!= null){
+                    val list : List<ProposalsItem> = respon.proposals as List<ProposalsItem>
+                    adapter.setListUsulan(list)
+                    progresBar.visibility = View.GONE
+                }
+                Log.d("anjay usulan", response.toString())
+            }
+
+            override fun onFailure(call: Call<ListUsulanProposalResponse>, t: Throwable) {
+                progresBar.visibility = View.GONE
+                Toast.makeText(this@UsulanKpActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+            }
+
+        })
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
         adapter.setOnClickListener(object : UsulanKpAdapter.ClickListener{
             override fun onItemClick(position: Int) {
-                val detailUsulan = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
-                detailUsulan.putExtra("namaMahasiswa", data[position].proposals?.get(0)?.id)
-                startActivity(detailUsulan)
+                val intentt = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
+//                intentt.putExtra("namaMahasiswa", data[position].name)
+//                Toast.makeText(this@UsulanKpActivity,data.toString(),Toast.LENGTH_LONG).show()
+                startActivity(intentt)
             }
         })
 

@@ -29,12 +29,12 @@ interface KpClient {
 
     @FormUrlEncoded
     @PATCH("/api/internship-agencies/{id}")
-    fun accRejectPerusahaan(@Header("Authorization") token:String, @Path("id") id: Int, @Field("status") status:Int)
+    fun accRejectPerusahaan(@Header("Authorization") token:String, @Path("id") id: Int, @Field("status") status:Int): Call<AccPerusahaanResponse>
 
     @GET("/api/internship-proposals")
-    fun listUsulanProposal(@Header("Authorization") token:String)
+    fun listUsulanProposal(@Header("Authorization") token:String): Call<ListUsulanProposalResponse>
 
     @GET("/api/internship-proposals/{id}")
-    fun detailUsulanProposal(@Header("Authorization") token:String, @Path("id") id: Int)
+    fun detailUsulanProposal(@Header("Authorization") token:String, @Path("id") id: Int): Call<DetailUsulanProposalResponse>
 
 }
