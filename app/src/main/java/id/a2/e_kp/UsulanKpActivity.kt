@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.adapters.UsulanKpAdapter
 import id.a2.e_kp.databinding.ActivityUsulanKpBinding
-import id.a2.e_kp.models.UsulanKp
+import id.a2.e_kp.models.ListUsulanProposalResponse
 
 class UsulanKpActivity : AppCompatActivity() {
 
@@ -30,16 +30,7 @@ class UsulanKpActivity : AppCompatActivity() {
             finish()
         }
 
-        val data =ArrayList<UsulanKp>()
-        data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))
-        data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
-        data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
-        data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))
-        data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
-        data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
-        data.add(UsulanKp(1,null,"Hagi Siraj", "2011521015"))
-        data.add(UsulanKp(1,null,"Delicia Syifa", "201152027"))
-        data.add(UsulanKp(1,null,"Kemal Muhammad", "2011523019"))
+        val data =ArrayList<ListUsulanProposalResponse>()
 
         recyclerView = binding.rvUsulanKP
         adapter = UsulanKpAdapter(data)
@@ -50,8 +41,7 @@ class UsulanKpActivity : AppCompatActivity() {
         adapter.setOnClickListener(object : UsulanKpAdapter.ClickListener{
             override fun onItemClick(position: Int) {
                 val detailUsulan = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
-                detailUsulan.putExtra("namaMahasiswa", data[position].nama)
-                detailUsulan.putExtra("nimMahasiswa", data[position].nim)
+                detailUsulan.putExtra("namaMahasiswa", data[position].proposals?.get(0)?.id)
                 startActivity(detailUsulan)
             }
         })

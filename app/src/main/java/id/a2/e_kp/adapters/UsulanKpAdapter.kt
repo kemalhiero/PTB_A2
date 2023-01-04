@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.databinding.ItemUsulanKpBinding
 import id.a2.e_kp.models.ListUsulanProposalResponse
-import id.a2.e_kp.models.UsulanKp
 
 class UsulanKpAdapter(private val data:ArrayList<ListUsulanProposalResponse>):
     RecyclerView.Adapter<UsulanKpAdapter.UsulanKpViewHolder>() {

@@ -58,12 +58,11 @@
                 android:id="@+id/tvNimDetailLaporan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="NIM"
                 android:textColor="#000000"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvNamaDetailLaporan"
                 app:layout_constraintTop_toBottomOf="@+id/tvNamaDetailLaporan" />
 
             <TextView
