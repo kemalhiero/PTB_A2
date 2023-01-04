@@ -4,129 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="15dp"
-    android:layout_marginVertical="12dp"
-    android:paddingHorizontal="10dp"
-    android:paddingVertical="10dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="6dp"
+    android:layout_marginBottom="4dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tvListUsulan1"
+            android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Perusahaan"
+            android:text="Nama"
             android:textColor="@color/black"
-            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvListUsulan2"
+            android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Mulai"
+            android:text="Alamat"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/tvListUsulan1"
-            app:layout_constraintTop_toBottomOf="@+id/tvListUsulan1" />
+            app:layout_constraintStart_toStartOf="@+id/textView17"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
         <TextView
-            android:id="@+id/tvListUsulan3"
+            android:id="@+id/textView19"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Selesai"
+            android:text="Status"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvListUsulan2"
-            app:layout_constraintTop_toBottomOf="@+id/tvListUsulan2" />
+            app:layout_constraintStart_toStartOf="@+id/textView18"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/titikDua"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/textView17"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/titikDua"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/tvListUsulan1"
-            app:layout_constraintStart_toEndOf="@+id/tvListUsulan1"
-            app:layout_constraintTop_toTopOf="@+id/tvListUsulan1" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView18"
+            app:layout_constraintStart_toEndOf="@+id/textView18"
+            app:layout_constraintTop_toTopOf="@+id/textView18" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/titikDua"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/tvListUsulan2"
-            app:layout_constraintStart_toStartOf="@+id/textView23"
-            app:layout_constraintTop_toTopOf="@+id/tvListUsulan2" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView19"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
+            app:layout_constraintTop_toTopOf="@+id/textView19" />
 
         <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/titikDua"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/tvListUsulan3"
-            app:layout_constraintStart_toStartOf="@+id/textView24"
-            app:layout_constraintTop_toTopOf="@+id/tvListUsulan3" />
-
-        <TextView
-            android:id="@+id/tvUsulanPerusahaanKP"
+            android:id="@+id/tvNamaListPerusahaan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="32dp"
             android:fontFamily="@font/poppins"
-            android:text="TextView"
+            android:text="LPTIK"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/textView23"
+            app:layout_constraintBottom_toBottomOf="@+id/textView20"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textView23"
-            app:layout_constraintTop_toTopOf="@+id/textView23"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toEndOf="@+id/textView20"
+            app:layout_constraintTop_toTopOf="@+id/textView20" />
 
         <TextView
-            android:id="@+id/tvUsulanMulaiKp"
+            android:id="@+id/tvAlamatListPerusahaan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:fontFamily="@font/poppins"
-            android:text="TextView"
+            android:text="Kampus Unand Limau Manis"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/textView24"
+            app:layout_constraintBottom_toBottomOf="@+id/textView21"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvUsulanPerusahaanKP"
-            app:layout_constraintTop_toTopOf="@+id/textView24" />
+            app:layout_constraintStart_toStartOf="@+id/tvNamaListPerusahaan"
+            app:layout_constraintTop_toTopOf="@+id/textView21" />
 
         <TextView
-            android:id="@+id/tvUsulanSelesaiKp"
-            android:layout_width="0dp"
+            android:id="@+id/tvStatusListPerusahaan"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:fontFamily="@font/poppins"
-            android:text="TextView"
+            android:text="Terima/Blacklist"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/textView25"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvUsulanMulaiKp"
-            app:layout_constraintTop_toTopOf="@+id/textView25" />
-
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/tvAlamatListPerusahaan"
+            app:layout_constraintTop_toTopOf="@+id/textView22" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

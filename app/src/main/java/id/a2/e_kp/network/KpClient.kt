@@ -22,7 +22,19 @@ interface KpClient {
     @POST("/api/password")
     fun changePassword(@Field("old_password") old_password: String, @Field("new_password") new_password:String, @Field("confirm_password") confirm_password:String): Call<ChangePasswordResponse>
 
+//    -----------------------
+
     @GET("/api/internship-agencies")
     fun listPerusahaan(@Header("Authorization") token:String): Call<ListPerusahaanResponse>
+
+    @FormUrlEncoded
+    @PATCH("/api/internship-agencies/{id}")
+    fun accRejectPerusahaan(@Header("Authorization") token:String, @Path("id") id: Int, @Field("status") status:Int)
+
+    @GET("/api/internship-proposals")
+    fun listUsulanProposal(@Header("Authorization") token:String)
+
+    @GET("/api/internship-proposals/{id}")
+    fun detailUsulanProposal(@Header("Authorization") token:String, @Path("id") id: Int)
 
 }

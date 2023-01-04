@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import id.a2.e_kp.databinding.ItemUsulanKpBinding
+import id.a2.e_kp.models.ListUsulanProposalResponse
 import id.a2.e_kp.models.UsulanKp
 
-class UsulanKpAdapter(private val data:ArrayList<UsulanKp>):
+class UsulanKpAdapter(private val data:ArrayList<ListUsulanProposalResponse>):
     RecyclerView.Adapter<UsulanKpAdapter.UsulanKpViewHolder>() {
 
     private lateinit var usulanKpListener: ClickListener
@@ -21,9 +22,10 @@ class UsulanKpAdapter(private val data:ArrayList<UsulanKp>):
 
     inner class UsulanKpViewHolder(val itemBinding: ItemUsulanKpBinding, listener: ClickListener):RecyclerView.ViewHolder(itemBinding.root) {
 
-        fun bind(data: UsulanKp){
-            itemBinding.tvNamaMahasiswaUsulanKp.text = data.nama
-            itemBinding.tvNimUsulanKp.text = data.nim
+        fun bind(data: ListUsulanProposalResponse){
+            itemBinding.tvUsulanPerusahaanKP.text = data.proposals?.get(0)?.name
+            itemBinding.tvUsulanMulaiKp.text = data.proposals?.get(0)?.startAt
+            itemBinding.tvUsulanSelesaiKp.text = data.proposals?.get(0)?.endAt
         }
 
         init {

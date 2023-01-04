@@ -108,6 +108,13 @@ class MainActivity : AppCompatActivity() {
             intent = Intent(applicationContext, LaporanActivity::class.java)
             startActivity(intent)
         }
+
+        lateinit var cardViewPerusahaanKp: CardView
+        cardViewPerusahaanKp = binding.cardViewPerusahaanKp
+        cardViewPerusahaanKp.setOnClickListener {
+            intent = Intent(applicationContext, ListPerusahaanActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
 
