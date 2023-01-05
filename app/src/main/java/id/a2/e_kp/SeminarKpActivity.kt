@@ -1,10 +1,21 @@
 package id.a2.e_kp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import android.widget.Toast
 import id.a2.e_kp.databinding.ActivitySeminarKpBinding
+import id.a2.e_kp.models.DetailSeminarResponse
+import id.a2.e_kp.models.DetailSeminarResponseItem
+import id.a2.e_kp.models.ListUsulanProposalResponse
+import id.a2.e_kp.network.KpClient
+import id.a2.e_kp.network.NetworkConfig
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SeminarKpActivity : AppCompatActivity() {
 
@@ -15,10 +26,44 @@ class SeminarKpActivity : AppCompatActivity() {
         binding = ActivitySeminarKpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        val sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE) ?: return
+        val ada = sharedPref.getString("token",null)
+
+        if (ada==null){
+            intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         val getNama = intent.getStringExtra("nama")
         binding.tvNamaMhsSeminar.text = getNama.toString()
         val getNim = intent.getStringExtra("nim")
         binding.tvNimMhsSeminar.text = getNim.toString()
+
+        val client: KpClient = NetworkConfig().getService()
+        val call: Call<DetailSeminarResponse> = client.detailSeminar("Bearer "+ada, 2)
+
+        call.enqueue(object: Callback<DetailSeminarResponse>{
+            override fun onResponse(
+                call: Call<DetailSeminarResponse>,
+                response: Response<DetailSeminarResponse>
+            ) {
+                val respon = response.body()?.detailSeminarResponse?.get(0)
+                if (respon!=null){
+                    Log.d("seminar", respon.toString())
+                    binding.tvJadwalSeminar.text = respon.seminarDate
+                    binding.tvTempatSeminar.text = respon.seminarRoomName
+                    binding.tvPembimbingSeminar.text = respon.supervisor.toString()
+                    binding.tvJudulSeminar.text = respon.title
+                }
+            }
+
+            override fun onFailure(call: Call<DetailSeminarResponse>, t: Throwable) {
+                Toast.makeText(this@SeminarKpActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+            }
+
+        })
 
         lateinit var button : Button
         button  = binding.buttonDaftarSeminarKp

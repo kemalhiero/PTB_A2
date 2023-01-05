@@ -65,6 +65,16 @@ class UsulanKpActivity : AppCompatActivity() {
                     progresBar.visibility = View.GONE
                 }
                 Log.d("anjay usulan", response.toString())
+
+                adapter.setOnClickListener(object : UsulanKpAdapter.ClickListener{
+                    override fun onItemClick(position: Int) {
+                        val intentt = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
+//                intentt.putExtra("namaMahasiswa", data[position].name)
+//                Toast.makeText(this@UsulanKpActivity,data[position].name.toString(),Toast.LENGTH_LONG).show()
+                        startActivity(intentt)
+                    }
+                })
+
             }
 
             override fun onFailure(call: Call<ListUsulanProposalResponse>, t: Throwable) {
@@ -77,14 +87,7 @@ class UsulanKpActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
-        adapter.setOnClickListener(object : UsulanKpAdapter.ClickListener{
-            override fun onItemClick(position: Int) {
-                val intentt = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
-//                intentt.putExtra("namaMahasiswa", data[position].name)
-//                Toast.makeText(this@UsulanKpActivity,data.toString(),Toast.LENGTH_LONG).show()
-                startActivity(intentt)
-            }
-        })
+
 
     }
 
