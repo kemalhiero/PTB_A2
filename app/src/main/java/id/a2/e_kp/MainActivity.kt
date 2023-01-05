@@ -14,7 +14,6 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import id.a2.e_kp.databinding.ActivityMainBinding
 import id.a2.e_kp.models.LogoutResponse
-import id.a2.e_kp.models.ProfileResponse
 import id.a2.e_kp.network.KpClient
 import id.a2.e_kp.network.NetworkConfig
 import retrofit2.Call
@@ -109,12 +108,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        lateinit var cardViewPerusahaanKp: CardView
+        /*lateinit var cardViewPerusahaanKp: CardView
         cardViewPerusahaanKp = binding.cardViewPerusahaanKp
         cardViewPerusahaanKp.setOnClickListener {
             intent = Intent(applicationContext, ListPerusahaanActivity::class.java)
             startActivity(intent)
-        }
+        }*/
     }
 }
 

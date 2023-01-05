@@ -68,10 +68,16 @@ class UsulanKpActivity : AppCompatActivity() {
 
                 adapter.setOnClickListener(object : UsulanKpAdapter.ClickListener{
                     override fun onItemClick(position: Int) {
-                        val intentt = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
-//                        intentt.putExtra("namaMahasiswa", data[position].id)
-//                Toast.makeText(this@UsulanKpActivity,data[position].name.toString(),Toast.LENGTH_LONG).show()
-                        startActivity(intentt)
+
+                        try {
+                            val intentt = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
+//                            intentt.putExtra("namaMahasiswa", data[position].id)
+//                            Toast.makeText(this@UsulanKpActivity,data[position].name.toString(),Toast.LENGTH_LONG).show()
+                            startActivity(intentt)
+                        }catch (e:IndexOutOfBoundsException){
+                            Toast.makeText(this@UsulanKpActivity,e.localizedMessage,Toast.LENGTH_LONG).show()
+                        }
+
                     }
                 })
 

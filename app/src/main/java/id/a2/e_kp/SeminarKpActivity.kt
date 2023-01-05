@@ -51,7 +51,7 @@ class SeminarKpActivity : AppCompatActivity() {
                 val respon = response.body()?.get(0)
                 if (respon!=null){
                     Log.d("seminarrr", respon.toString())
-                    Toast.makeText(this@SeminarKpActivity, respon.toString(), Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this@SeminarKpActivity, respon.toString(), Toast.LENGTH_SHORT).show()
 
                     binding.tvJadwalSeminar.text = respon.seminarDate
                     binding.tvTempatSeminar.text = respon.seminarRoomName
