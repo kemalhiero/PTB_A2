@@ -70,8 +70,9 @@ class LaporanActivity : AppCompatActivity() {
         adapter.setOnClickListener(object : laporanKpAdapter.clickListener{
             override fun onItemClick(position: Int) {
                 val DetailLaporanKpActivity = Intent (applicationContext, DetailLaporanKpActivity::class.java)
-
-                startActivity(DetailLaporanKpActivity)
+                DetailLaporanKpActivity.putExtra("namaMahasiswa",data[position].name)
+                DetailLaporanKpActivity.putExtra("nimMahasiswa",data[position].nim)
+                startActivity(intent)
             }
         })
 
