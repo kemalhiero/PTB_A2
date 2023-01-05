@@ -23,6 +23,9 @@ interface KpClient {
     fun changePassword(@Field("old_password") old_password: String, @Field("new_password") new_password:String, @Field("confirm_password") confirm_password:String): Call<ChangePasswordResponse>
 
     @GET("/api/finished-internships")
-    fun selesaikp(@Header("Authorization") token:String) : Call<SelesaiKp>
+    fun selesaikp(@Header("Authorization") token:String) : Call<SelesaiKP>
+
+    @PATCH("/api/internship-grade/2/approval")
+    fun setujunilai(@Header("Authorization") token: String) : Call<setujuNilai>
 
 }

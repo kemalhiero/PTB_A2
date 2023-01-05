@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import id.a2.e_kp.databinding.ActivityDetailLaporanBinding
 
+
 class DetailLaporanKpActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityDetailLaporanBinding
@@ -13,8 +14,8 @@ class DetailLaporanKpActivity : AppCompatActivity() {
         binding = ActivityDetailLaporanBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val getNama = intent.getStringExtra("namaMahasiswa")
-        binding.tvNamaMhsDetailLaporan.text = getNama.toString()
+        val getName = intent.getStringExtra("namaMahasiswa")
+        binding.tvNamaMhsDetailLaporan.text = getName.toString()
         val getNim = intent.getStringExtra("nimMahasiswa")
         binding.tvNimMhsDetailLaporan.text = getNim.toString()
 
