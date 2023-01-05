@@ -38,6 +38,6 @@ interface KpClient {
     fun detailUsulanProposal(@Header("Authorization") token:String, @Path("id") id: Int): Call<DetailUsulanProposalResponse>
 
     @GET("/api/internship-students/{id}/seminar")
-    fun detailSeminar(@Header("Authorization") token:String, @Path("id") id: Int): Call<DetailSeminarResponse>
+    fun detailSeminar(@Header("Authorization") token:String, @Path("id") id: Int): Call<List<DetailSeminarResponseItem>>
 
 }

@@ -69,7 +69,7 @@ class UsulanKpActivity : AppCompatActivity() {
                 adapter.setOnClickListener(object : UsulanKpAdapter.ClickListener{
                     override fun onItemClick(position: Int) {
                         val intentt = Intent (this@UsulanKpActivity, DetailUsulanKpActivity::class.java)
-//                intentt.putExtra("namaMahasiswa", data[position].name)
+//                        intentt.putExtra("namaMahasiswa", data[position].id)
 //                Toast.makeText(this@UsulanKpActivity,data[position].name.toString(),Toast.LENGTH_LONG).show()
                         startActivity(intentt)
                     }

@@ -10,7 +10,6 @@ import android.widget.Toast
 import id.a2.e_kp.databinding.ActivitySeminarKpBinding
 import id.a2.e_kp.models.DetailSeminarResponse
 import id.a2.e_kp.models.DetailSeminarResponseItem
-import id.a2.e_kp.models.ListUsulanProposalResponse
 import id.a2.e_kp.network.KpClient
 import id.a2.e_kp.network.NetworkConfig
 import retrofit2.Call
@@ -42,16 +41,18 @@ class SeminarKpActivity : AppCompatActivity() {
         binding.tvNimMhsSeminar.text = getNim.toString()
 
         val client: KpClient = NetworkConfig().getService()
-        val call: Call<DetailSeminarResponse> = client.detailSeminar("Bearer "+ada, 2)
+        val call: Call<List<DetailSeminarResponseItem>> = client.detailSeminar("Bearer "+ada, 2)
 
-        call.enqueue(object: Callback<DetailSeminarResponse>{
+        call.enqueue(object: Callback<List<DetailSeminarResponseItem>>{
             override fun onResponse(
-                call: Call<DetailSeminarResponse>,
-                response: Response<DetailSeminarResponse>
+                call: Call<List<DetailSeminarResponseItem>>,
+                response: Response<List<DetailSeminarResponseItem>>
             ) {
-                val respon = response.body()?.detailSeminarResponse?.get(0)
+                val respon = response.body()?.get(0)
                 if (respon!=null){
-                    Log.d("seminar", respon.toString())
+                    Log.d("seminarrr", respon.toString())
+                    Toast.makeText(this@SeminarKpActivity, respon.toString(), Toast.LENGTH_SHORT).show()
+
                     binding.tvJadwalSeminar.text = respon.seminarDate
                     binding.tvTempatSeminar.text = respon.seminarRoomName
                     binding.tvPembimbingSeminar.text = respon.supervisor.toString()
@@ -59,7 +60,7 @@ class SeminarKpActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<DetailSeminarResponse>, t: Throwable) {
+            override fun onFailure(call: Call<List<DetailSeminarResponseItem>>, t: Throwable) {
                 Toast.makeText(this@SeminarKpActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
             }
 
